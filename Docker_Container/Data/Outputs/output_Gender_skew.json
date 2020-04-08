@@ -1,0 +1,48 @@
+{
+  "qid" : 1,
+  "script" : "Gender",
+  "results": [
+    {
+      "attribute_value": "Consumer",
+      "attribute_results": {
+        "Male": "65",
+        "Female": "35"
+      }
+    },
+    {
+      "attribute_value": "Enterprise",
+      "attribute_results": {
+        "Male": "40",
+        "Female": "60"
+      }
+  }],
+  "country_code": "ESP",
+  "query_type" : "impressions",
+  "attribute_matrix_consumer_type"
+  : [{
+  "attribute_value" : "Consumer",
+    "country_ratio_sum":"123647.0856846571",
+    "region_ratio_sum": "308559.16019934416",
+    "city_ratio_sum": "309918.96382790804",
+    "province_ratio_sum": "340467.78478115797",
+    "country_status_sum": "79501",
+    "region_status_sum": "377797",
+    "city_status_sum": "356455",
+    "province_status_sum":  "402020"
+    },
+      {
+    "attribute_value" : "Enterprise",
+    "country_ratio_sum":"123647.0856846571",
+    "region_ratio_sum": "308559.16019934416",
+    "city_ratio_sum": "309918.96382790804",
+    "province_ratio_sum": "340467.78478115797",
+    "country_status_sum": "79501",
+    "region_status_sum": "377797",
+    "city_status_sum": "356455",
+    "province_status_sum":  "402020"
+        
+      }
+
+    ]
+
+}

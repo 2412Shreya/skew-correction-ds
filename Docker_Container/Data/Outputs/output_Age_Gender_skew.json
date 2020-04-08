@@ -1,0 +1,140 @@
+
+{
+  "attribute_matrix_consumer_type_age": {
+    "attribute_value": "Zeocore",
+    "18_24_country_ratio_sum": "123647.0856846571",
+    "18_24_region_ratio_sum": "308559.16019934416",
+    "18_24_province_ratio_sum": "309918.96382790804",
+    "18_24_city_ratio_sum": "340467.78478115797",
+    "25_34_country_ratio_sum": "123647.0856846571",
+    "25_34_region_ratio_sum": "308559.16019934416",
+    "25_34_province_ratio_sum": "309918.96382790804",
+    "25_34_city_ratio_sum": "340467.78478115797",
+    "35_44_country_ratio_sum": "123647.0856846571",
+    "35_44_region_ratio_sum": "308559.16019934416",
+    "35_44_province_ratio_sum": "309918.96382790804",
+    "35_44_city_ratio_sum": "340467.78478115797",
+    "45_54_country_ratio_sum": "123647.0856846571",
+    "45_54_region_ratio_sum": "308559.16019934416",
+    "45_54_province_ratio_sum": "309918.96382790804",
+    "45_54_city_ratio_sum": "340467.78478115797",
+    "55+_country_ratio_sum": "123647.0856846571",
+    "55+_region_ratio_sum": "308559.16019934416",
+    "55+_province_ratio_sum": "309918.96382790804",
+    "55+_city_ratio_sum": "340467.78478115797",
+    "country_status_sum": "79501",
+    "region_status_sum": "377797",
+    "city_status_sum": "356455",
+    "province_status_sum": "402020"
+  },
+  "attribute_matrix_consumer_type_gender": [
+    {
+      "attribute_value": "18-24",
+      "country_ratio_sum": "123647.0856846571",
+      "region_ratio_sum": "308559.16019934416",
+      "city_ratio_sum": "309918.96382790804",
+      "province_ratio_sum": "340467.78478115797",
+      "country_status_sum": "79501",
+      "region_status_sum": "377797",
+      "city_status_sum": "356455",
+      "province_status_sum": "402020"
+    },
+    {
+      "attribute_value": "25-34",
+      "country_ratio_sum": "123647.0856846571",
+      "region_ratio_sum": "308559.16019934416",
+      "city_ratio_sum": "309918.96382790804",
+      "province_ratio_sum": "340467.78478115797",
+      "country_status_sum": "79501",
+      "region_status_sum": "377797",
+      "city_status_sum": "356455",
+      "province_status_sum": "402020"
+    },
+    {
+      "attribute_value": "35-44",
+      "country_ratio_sum": "123647.0856846571",
+      "region_ratio_sum": "308559.16019934416",
+      "city_ratio_sum": "309918.96382790804",
+      "province_ratio_sum": "340467.78478115797",
+      "country_status_sum": "79501",
+      "region_status_sum": "377797",
+      "city_status_sum": "356455",
+      "province_status_sum": "402020"
+    },
+    {
+      "attribute_value": "45-55",
+      "country_ratio_sum": "123647.0856846571",
+      "region_ratio_sum": "308559.16019934416",
+      "city_ratio_sum": "309918.96382790804",
+      "province_ratio_sum": "340467.78478115797",
+      "country_status_sum": "79501",
+      "region_status_sum": "377797",
+      "city_status_sum": "356455",
+      "province_status_sum": "402020"
+    },
+    {
+      "attribute_value": "55+",
+      "country_ratio_sum": "123647.0856846571",
+      "region_ratio_sum": "308559.16019934416",
+      "city_ratio_sum": "309918.96382790804",
+      "province_ratio_sum": "340467.78478115797",
+      "country_status_sum": "79501",
+      "region_status_sum": "377797",
+      "city_status_sum": "356455",
+      "province_status_sum": "402020"
+    }
+  ],
+  "country_code": "ESP",
+  "qid": 1,
+  "query_type": "impressions",
+  "results": [
+    {
+      "attribute_value": "Age",
+      "attribute_results": {
+        "18-24": "20",
+        "25-34": "30",
+        "35-44": "30",
+        "45-54": "10",
+        "55+": "10"
+      }
+    },
+    {
+      "attribute_value": "Gender",
+      "attribute_results": {
+        "18-24":
+          {
+            "Male": "65",
+            "Female": "35"
+          }
+        ,
+        "25-34":
+          {
+            "Male": "40",
+            "Female": "60"
+          }
+        ,
+        "35-44":
+          {
+            "Male": "65",
+            "Female": "35"
+          }
+        ,
+        "45-54":
+          {
+            "Male": "65",
+            "Female": "35"
+          }
+        ,
+        "55+":
+          {
+            "Male": "65",
+            "Female": "35"
+          }
+      }
+    }
+
+  ],
+  "script": "GenderAge"
+}
+
+
