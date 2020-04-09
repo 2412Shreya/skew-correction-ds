@@ -2,8 +2,10 @@ import os
 import subprocess
 import csv
 import sys
+# import gsutil
 
 def loadWeights(path, outputPath):
+    print ("Weights Loading started")
     command = ['gsutil', 'ls', path]
     output = subprocess.check_output(command).splitlines()
     print ("output", output)
@@ -16,8 +18,10 @@ def loadWeights(path, outputPath):
         print ("Making download directory")
         os.mkdir(outputPath)
     FILE_PATH = outputPath + "/weights.csv"
+    print ("#####################")
     print ("FILE_PATH", FILE_PATH)
     subprocess.call(["gsutil", "cp", path + "/" + file_name, FILE_PATH])
+    print ("Weights loading finished")
 def main(argv):
     inputPath = argv[0]
     outputPath = argv[1]

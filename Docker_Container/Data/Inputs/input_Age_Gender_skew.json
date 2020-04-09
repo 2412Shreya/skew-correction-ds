@@ -41,7 +41,8 @@
       "country_age_status_sum": "79501",
       "region_age_status_sum": "377797",
       "city_age_status_sum": "356455",
-      "province_age_status_sum": "402020"
+      "province_age_status_sum": "402020",
+          "counts" : "3564557"
     },
     {
       "attribute_value": "25-34",
@@ -80,7 +81,8 @@
       "country_age_status_sum": "79501",
       "region_age_status_sum": "377797",
       "city_age_status_sum": "356455",
-      "province_age_status_sum": "402020"
+      "province_age_status_sum": "402020",
+          "counts" : "3564557"
 
     },
     {
@@ -120,7 +122,8 @@
       "country_age_status_sum": "79501",
       "region_age_status_sum": "377797",
       "city_age_status_sum": "356455",
-      "province_age_status_sum": "402020"
+      "province_age_status_sum": "402020",
+          "counts" : "3564557"
 
     },
     {
@@ -160,7 +163,8 @@
       "country_age_status_sum": "79501",
       "region_age_status_sum": "377797",
       "city_age_status_sum": "356455",
-      "province_age_status_sum": "402020"
+      "province_age_status_sum": "402020",
+          "counts" : "3564557"
 
     },
     {
@@ -200,7 +204,8 @@
       "country_age_status_sum": "79501",
       "region_age_status_sum": "377797",
       "city_age_status_sum": "356455",
-      "province_age_status_sum": "402020"
+      "province_age_status_sum": "402020",
+          "counts" : "3564557"
 
       
     },
@@ -241,7 +246,8 @@
       "country_age_status_sum": "79501",
       "region_age_status_sum": "377797",
       "city_age_status_sum": "356455",
-      "province_age_status_sum": "402020"
+      "province_age_status_sum": "402020",
+          "counts" : "3564557"
 
     }    
   ]

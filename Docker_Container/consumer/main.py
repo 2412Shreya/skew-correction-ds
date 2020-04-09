@@ -5,7 +5,7 @@ import json
 from consumptionFromQueue import callback
 
 input = {
-  "qid" : 6,
+  "qid" : 1,
   "country_code": "ESP",
   "query_type" : "impressions",
     "script" : "Gender",
@@ -19,7 +19,8 @@ input = {
     "country_status_sum": "79501",
     "region_status_sum": "377797",
     "city_status_sum": "356455",
-    "province_status_sum":  "402020"
+    "province_status_sum":  "402020",
+    "counts" : "3564557"
     },
       {
     "attribute_value" : "Enterprise",
@@ -30,13 +31,16 @@ input = {
     "country_status_sum": "79501",
     "region_status_sum": "377797",
     "city_status_sum": "356455",
-    "province_status_sum":  "402020"
+    "province_status_sum":  "402020",
+    "counts" : "3564557"
 
       }
 
     ]
 
 }
+
+
 
 input_json = json.dumps(input)
 

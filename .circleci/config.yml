@@ -1,0 +1,32 @@
+jobs:
+  build-push-image:
+    working_directory: ~/project
+    docker:
+      - image: zeotap-docker.jfrog.io/zeotap-maven:sbt
+        auth:
+          username: $DOCKER_USER
+          password: $DOCKER_PASSWORD
+    resource_class: large
+    steps:
+      - checkout
+      - setup_remote_docker:
+          docker_layer_caching: true
+      - run:
+          name: Docker Login
+          command: docker login --username $DOCKER_USER --password $DOCKER_PASSWORD zeotap-docker.jfrog.io
+      - run:
+          name: Build and push docker image
+          command: |
+            docker build -t skew-correction-ds-backend .
+            docker skew-correction-ds-backend targeting zeotap-docker.jfrog.io/targeting:$CIRCLE_BRANCH
+            docker skew-correction-ds-backend targeting zeotap-docker.jfrog.io/targeting:$CIRCLE_BRANCH-$CIRCLE_BUILD_NUM
+            docker push zeotap-docker.jfrog.io/skew-correction-ds-backend:$CIRCLE_BRANCH
+            docker push zeotap-docker.jfrog.io/skew-correction-ds-backend:$CIRCLE_BRANCH-$CIRCLE_BUILD_NUM
+workflows:
+  version: 2
+  build-and-deploy:
+    jobs:
+      - build-push-image:
+          filters:
+            branches:
+              only: /^(dev|prod)$/

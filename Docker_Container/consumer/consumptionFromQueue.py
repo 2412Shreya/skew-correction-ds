@@ -45,11 +45,11 @@ def callback(ch, method, properties, body):
             weights_array = utils.fetch_weights_local_gender(country_id, script)
             output = GenderSkew.mainFunction(string_query, country_id, query_type, weights_array)
         elif script == "Age":
-            weights_dict = fetch_weights_local_age(country_id, script)
+            weights_dict = utils.fetch_weights_local_age(country_id, script)
             output = AgeSkew.mainFunction(string_query, country_id, query_type, weights_dict)
         elif script == "GenderAge":
             weights_array_gender = utils.fetch_weights_local_gender(country_id, "Gender")
-            weights_dict_age = fetch_weights_local_age(country_id, "Age")
+            weights_dict_age = utils.fetch_weights_local_age(country_id, "Age")
             attribute_list_gender = prepareInput.prepareGenderSkewInput(string_query)
             output_gender = GenderSkew.mainFunction(attribute_list_gender, country_id, query_type, weights_array_gender)
             attribute_list_age = prepareInput.prepareAgeSkewInput(string_query)
@@ -71,7 +71,9 @@ def callback(ch, method, properties, body):
         skew_correction_result_json["qid"] = qid
         skew_correction_result_json["query_type"] = query_type
         skew_correction_result_json["script"] = script
+        # print ("skew_correction_result_json ", skew_correction_result_json)
 
+        # test_dict = {"a": 2, "b": 4}
         status_ = (index_in_es(qid, skew_correction_result_json))
         ch.basic_ack(delivery_tag=method.delivery_tag)
         print ("result pushed")
@@ -80,21 +82,22 @@ def callback(ch, method, properties, body):
         log_status['method'] = "subscirber"
         log_status['status'] = "Success"
 
-        logs = []
-        logs_ = {}
-        logs.append(log_status)
-
-
-        id_ = qid + "LogS"
-        logs_['logs'] = logs
-        logs_['qid_'] = id_
-        print('log_status:', logs_)
-
-        status__ = (index_in_es(id_, logs_))
-        print(status__)
-        logging.info('Log status pushed')
-
-        return status_
+        # logs = []
+        # logs_ = {}
+        # logs.append(log_status)
+        #
+        #
+        # id_ = str(qid) + "LogS"
+        # logs_['logs'] = logs
+        # logs_['qid_'] = id_
+        # print('log_status:', logs_)
+        #
+        # status__ = (index_in_es(id_, logs_))
+        # print(status__)
+        # logging.info('Log status pushed')
+        #
+        # return status_
+        return True
     except Exception as exp:
         print (exp)
         print ("input error message is:", body)

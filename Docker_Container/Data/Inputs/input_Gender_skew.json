@@ -13,7 +13,8 @@
     "country_status_sum": "79501",
     "region_status_sum": "377797",
     "city_status_sum": "356455",
-    "province_status_sum":  "402020"
+    "province_status_sum":  "402020",
+    "counts" : "3564557"
     },
       {
     "attribute_value" : "Enterprise",
@@ -24,7 +25,8 @@
     "country_status_sum": "79501",
     "region_status_sum": "377797",
     "city_status_sum": "356455",
-    "province_status_sum":  "402020"
+    "province_status_sum":  "402020",
+    "counts" : "3564557"
 
       }
 

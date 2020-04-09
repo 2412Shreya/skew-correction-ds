@@ -71,6 +71,11 @@ def mainFunction(attribute_list, country, query_type, weights_array):
     # dfnew = df.iloc[1:]
     result = {}
     # print ("df ", df)
+
+    total_counts_sum = 0.0
+    for row in attribute_list:
+        total_counts_sum += float(row["counts"])
+
     for row in attribute_list:
         value = row['attribute_value']
         country_ratio_sum = float(row['country_ratio_sum'])
@@ -81,6 +86,7 @@ def mainFunction(attribute_list, country, query_type, weights_array):
         city_status_sum = float(row['city_status_sum'])
         province_ratio_sum = float(row['province_ratio_sum'])
         province_status_sum = float(row['province_status_sum'])
+        counts = float(row['counts'])
         if query_type == "impressions":
             func_score = row_calculation_impressions(country, country_ratio_sum, country_status_sum, region_ratio_sum, region_status_sum, \
                         city_ratio_sum, city_status_sum, province_ratio_sum, province_status_sum, weights_array)
@@ -90,9 +96,12 @@ def mainFunction(attribute_list, country, query_type, weights_array):
                                                           city_ratio_sum, city_status_sum, province_ratio_sum,
                                                           province_status_sum, weights_array)
         female_percentage = (func_score / (1 + func_score)) * 100
+        updated_female_percentage = (float(counts)*(female_percentage/100.0)/total_counts_sum)*100
         male_percentage = 100 - female_percentage
-        # print ("female % of ", value, ": ", female_percentage)
-        result[value] = {"female" : female_percentage, "male" : male_percentage}
+        updated_male_percentage = (counts * (male_percentage / 100.0) / total_counts_sum) * 100
+        result[value] = {"female" : updated_female_percentage, "male" : updated_male_percentage}
+        # result[value] = {"female" : female_percentage, "male" : male_percentage}
+
         # return female_percentage, male_percentage
     log_status['method'] = 'Skew_Attribute.GenderSkew.mainFunction'
     log_status['status'] = 'Success'

@@ -61,7 +61,12 @@ def mainFunction(attribute_list, country, query_type, weights_dict):
     # dfnew = df.iloc[1:]
     result = {}
     # print ("df ", df)
+    total_counts_sum = 0.0
     for row in attribute_list:
+        total_counts_sum += float(row["counts"])
+    print ("total_counts_sum ", total_counts_sum)
+    for row in attribute_list:
+        counts = row["counts"]
         value = row['attribute_value']
         ratios_18_24 = {
                         "country_ratio_sum": float(row['18_24_country_ratio_sum']),
@@ -107,9 +112,19 @@ def mainFunction(attribute_list, country, query_type, weights_dict):
         func_score = row_calculation(country, ratios_18_24, ratios_25_34, ratios_35_44, ratios_45_54, ratios_55_64, ratios_65_above, \
                                                      country_status_sum, region_status_sum, city_status_sum, province_status_sum, weights_dict)
 
-
+        update_func_score = {}
+        update_func_score["18-24"] = (float(counts) * (float(func_score["18-24"]) / 100.0) / total_counts_sum) * 100
+        update_func_score["25-34"] = (float(counts) * (float(func_score["25-34"]) / 100.0) / total_counts_sum) * 100
+        update_func_score["35-44"] = (float(counts) * (float(func_score["35-44"]) / 100.0) / total_counts_sum) * 100
+        update_func_score["45-54"] = (float(counts) * (float(func_score["45-54"]) / 100.0) / total_counts_sum) * 100
+        update_func_score["55-64"] = (float(counts) * (float(func_score["55-64"]) / 100.0) / total_counts_sum) * 100
+        update_func_score["65+"] = (float(counts) * (float(func_score["65+"]) / 100.0) / total_counts_sum) * 100
         # print ("func_score, ", func_score)
-        result[value] = { "18-24": func_score["18-24"], "25-34" : func_score["25-34"], "35-44": func_score["35-44"], "45-54": func_score["45-54"], "55-64": func_score["55-64"], "65+": func_score["65+"]}
+        checkSum = 0.0
+        for k,v in update_func_score:
+            checkSum += v
+        print ("checkSum", checkSum)
+        result[value] = { "18-24": update_func_score["18-24"], "25-34" : update_func_score["25-34"], "35-44": update_func_score["35-44"], "45-54": update_func_score["45-54"], "55-64": update_func_score["55-64"], "65+": update_func_score["65+"]}
     log_status['method'] = 'Skew_Attribute.AgeSkew.mainFunction'
     log_status['status'] = 'Success'
     return result

@@ -1,0 +1,1 @@
+*/2 * * * * python /skew-correction-prod/Docker_Container/fetch_weights/load_weights_from_s3.py gs://gcs-ireland-all-eu-zai-internal-zeotap-com/skewed_insights/gender/latest_weights /skew-correction-prod/Docker_Container/Data/Weights/Gender/EU/ >> /var/log/weights-cron.log 2>>&1

@@ -14,11 +14,13 @@ country_region_map = {
 }
 
 
+
+
+
 def fetch_weights_local_gender(country, script):
     weights_dict = {}
     weights_dict[str(country)] = {}
-    BASE_PATH = "/Users/shreyajain/PycharmProjects/Work/InSights/Back-end/Docker_Container/Data/Weights/" + script + "/"
-    # BASE_PATH = "/Back-end/Docker_Container/Data/Weights/"
+    BASE_PATH = "Data/Weights/" + script + "/"
     FILE_PATH = BASE_PATH + country_region_map[country] + "/weights.csv"
     with open(FILE_PATH, 'r') as csvfile:
         reader = csv.reader(csvfile)
@@ -48,7 +50,7 @@ def fetch_weights_local_age(country, script):
     weights_dict[str(country)]["45_54"] = {}
     weights_dict[str(country)]["55_64"] = {}
     weights_dict[str(country)]["65_above"] = {}
-    BASE_PATH = "/Users/shreyajain/PycharmProjects/Work/InSights/Back-end/Docker_Container/Data/Weights/" + script + "/"
+    BASE_PATH = "Data/Weights/" + script + "/"
     # BASE_PATH = "/Back-end/Docker_Container/Data/Weights/"
     FILE_PATH = BASE_PATH + country_region_map[country] + "/weights.csv"
     with open(FILE_PATH, 'r') as csvfile:
